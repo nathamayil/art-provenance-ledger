@@ -1,0 +1,16 @@
+fastapi
+uvicorn[standard]
+python-multipart
+torch
+torchvision
+torchaudio
+transformers
+datasets
+faiss-cpu
+neo4j
+Pillow
+numpy
+scikit-learn
+python-dotenv
+httpx
+pytest
