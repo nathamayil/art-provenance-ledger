@@ -21,12 +21,12 @@ def seed():
     print("Starting seed... this may take a while.")
 
     for i, item in enumerate(dataset):
-        if i >= 5000:   # Limit to 5000 for initial seed; increase as needed
+        if i >= 500:   # Limit to 5000 for initial seed; increase as needed
             break
 
         artist = item.get("artist", "Unknown")
         movement = item.get("style", "Unknown")
-        image = item["image"]
+        image = item["image"].convert("RGB")
 
         try:
             embedding = generator.generate_image_embedding(image)
@@ -51,7 +51,7 @@ def seed():
             print(f"Skipping item {i}: {e}")
             continue
 
-    dim = 512
+    dim = 1024
     index = faiss.IndexHNSWFlat(dim, 32)
     index.hnsw.efConstruction = 200
     index.add(np.array(embeddings).astype("float32"))

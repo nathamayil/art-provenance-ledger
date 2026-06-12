@@ -22,9 +22,9 @@ class EmbeddingGenerator:
         ).to(self.device)
 
         with torch.no_grad():
-            features = self.model.get_image_features(**inputs)
+            features = self.model.vision_model(**inputs)
 
-        embedding = features.cpu().numpy().flatten()
+        embedding = features.pooler_output.cpu().numpy().flatten()
         embedding = embedding / np.linalg.norm(embedding)
         return embedding
 
@@ -36,8 +36,8 @@ class EmbeddingGenerator:
         ).to(self.device)
 
         with torch.no_grad():
-            features = self.model.get_text_features(**inputs)
+            features = self.model.text_model(**inputs)
 
-        embedding = features.cpu().numpy().flatten()
+        embedding = features.pooler_output.cpu().numpy().flatten()
         embedding = embedding / np.linalg.norm(embedding)
         return embedding

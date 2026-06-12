@@ -6,16 +6,13 @@ import "./App.css";
 
 export default function App() {
   const [result, setResult] = useState(null);
-
   return (
     <div className="app">
       <header className="app-header">
         <h1>Art Provenance Ledger</h1>
         <p>Trace the stylistic DNA of any AI-generated image</p>
       </header>
-
       <ImageUploader onResult={setResult} />
-
       {result && (
         <>
           <section className="section">
@@ -26,7 +23,6 @@ export default function App() {
               ))}
             </div>
           </section>
-
           <section className="section">
             <h2>Art Movements</h2>
             {result.influence_summary.movements.map((m) => (
@@ -44,7 +40,6 @@ export default function App() {
               </div>
             ))}
           </section>
-
           <section className="section">
             <h2>Influence Graph</h2>
             <GraphExplorer imageId={result.image_id} />

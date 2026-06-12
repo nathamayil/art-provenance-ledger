@@ -39,7 +39,7 @@ class Neo4jClient:
                     MERGE (u)-[:INFLUENCED_BY {weight: $weight, score: $score}]->(a)
                 """,
                 id=uploaded_image_id,
-                artist=influence["artist"],
+                artist=influence["name"],
                 weight=influence["weight"],
                 score=influence.get("similarity_score", 0.0))
 
