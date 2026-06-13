@@ -1,4 +1,4 @@
-<img width="851" height="897" alt="image" src="https://github.com/user-attachments/assets/4732afde-ce13-41ad-8bf9-9a4bbf5ed83d" /># Art Provenance Ledger
+# Art Provenance Ledger
 
 > Trace the stylistic DNA of any artwork using AI-powered visual embeddings and graph-based provenance tracking.
 > <img width="720" height="892" alt="image" src="https://github.com/user-attachments/assets/a97c7b76-81ff-4224-bcd2-220538a011e1" />
