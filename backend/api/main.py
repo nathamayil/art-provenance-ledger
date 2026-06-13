@@ -1,12 +1,15 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from .routes import router
+from api.routes import router
 
 app = FastAPI(title="Art Provenance Ledger API")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],
+    allow_origins=[
+        "http://localhost:5173",
+        "https://art-providence-ledger.vercel.app"
+    ],
     allow_methods=["*"],
     allow_headers=["*"]
 )
