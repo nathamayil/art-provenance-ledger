@@ -15,17 +15,20 @@ def seed():
 
     dataset = load_dataset("huggan/wikiart", split="train", streaming=True)
 
+    artist_names = dataset.features["artist"].names
+    style_names = dataset.features["style"].names
+
     embeddings = []
     metadata = []
 
     print("Starting seed... this may take a while.")
 
     for i, item in enumerate(dataset):
-        if i >= 500:   # Limit to 5000 for initial seed; increase as needed
+        if i >= 500:
             break
 
-        artist = item.get("artist", "Unknown")
-        movement = item.get("style", "Unknown")
+        artist = artist_names[item["artist"]]
+        movement = style_names[item["style"]]
         image = item["image"].convert("RGB")
 
         try:
