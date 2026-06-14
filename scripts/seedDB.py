@@ -54,7 +54,7 @@ def seed():
             print(f"Skipping item {i}: {e}")
             continue
 
-    dim = 1024
+    dim = 512
     index = faiss.IndexHNSWFlat(dim, 32)
     index.hnsw.efConstruction = 200
     index.add(np.array(embeddings).astype("float32"))

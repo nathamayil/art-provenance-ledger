@@ -8,10 +8,10 @@ class EmbeddingGenerator:
     def __init__(self):
         self.device = "cuda" if torch.cuda.is_available() else "cpu"
         self.model = CLIPModel.from_pretrained(
-            "openai/clip-vit-large-patch14"
+            "openai/clip-vit-base-patch32"
         ).to(self.device)
         self.processor = CLIPProcessor.from_pretrained(
-            "openai/clip-vit-large-patch14"
+            "openai/clip-vit-base-patch32"
         )
         print(f"CLIP model loaded on {self.device}")
 
